@@ -87,14 +87,18 @@ function bounceAnimation(row, column, growFactor, duration) {
                                     height: (cubeDimension * growFactor),
                                     x: startPos[0] - (((cubeDimension * growFactor) - cubeDimension) / 2),
                                     y: startPos[1] - (((cubeDimension * growFactor) - cubeDimension) / 2),
-                                    fill: '#fff'
+                                    fill: '#fff',
+                                    //rx: cubeDimension / 2,
+                                    //ry: cubeDimension / 2
                                 });
         rectangle.animate(durationEnd, '<').attr({
                                     width: cubeDimension,
                                     height: cubeDimension,
                                     x: startPos[0],
                                     y: startPos[1],
-                                    fill: getRandomColor(colors)
+                                    fill: getRandomColor(colors),
+                                    //rx: 0,
+                                    //ry: 0
         });
     //} else {
         //console.log("animation failed because already animating");
@@ -174,7 +178,7 @@ function mainLoop(allowLoop) {
 
         console.log("Dit is de waarde van de timer: " + ((95736000 / (w*h)) + 10))
         //Restart loop with interval relative to width and height
-        timer = setTimeout(function() { loop = mainLoop(true) }, /*((55736000 / (w*h)) + 10)*/ 100);
+        timer = setTimeout(function() { loop = mainLoop(true) }, ((55736000 / (w*h)) + 10));
     } else {
         clearTimeout(timer);
     }
