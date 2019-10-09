@@ -16,7 +16,7 @@ input {
 .main-content {
     border-radius: 0px 0px 10px 10px;
     padding: 20px;
-    box-shadow: #bbbbbb7a 0px 17px 23px;
+    /*box-shadow: #000000 0px 17px 23px; werkt niet op dark achtergrond */
     background-image: url('/kjdekker/media/corner-piece.svg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -38,7 +38,7 @@ input {
 
 /* Kleuren en dergelijke */
 body {
-    background: linear-gradient(#f8f8ff, #f8f8ff, #517a96);
+    background: linear-gradient(#0b1217, #517a96);
 }
 
 .bg-top {
@@ -68,6 +68,15 @@ a:hover {
 .title h1 {
     font-family: 'Caveat', cursive;
     margin-bottom: 0;
+    color:white;
+}
+
+#navigation a{
+    color: #a7a7a7;
+}
+
+#navigation a:hover{
+    color: white;
 }
 
 .title p {
