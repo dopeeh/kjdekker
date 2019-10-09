@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<?php 
+		include 'main/head.php';
+	?>
+</head>
+<body>
+<div class='container mt-5'><!-- Main container -->
+    <!-- Header -->
+    <?php 
+        include 'main/header.php';
+    ?>
+    
+    <!-- Content Pagina -->
+    <div class='container pt-5'>
+    
+    </div>
+
+</div> <!-- Einde main container -->
+    
+    <!-- Footer -->
+    <?php 
+		include 'main/footer.php';
+    ?>
+</body>
+</html>

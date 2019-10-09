@@ -1,0 +1,159 @@
+/* Sizing en algemene zaken */
+html, body {
+    height: 100%;
+    font-family: 'Be Vietnam', sans-serif;
+}
+
+textarea { 
+    border: none; 
+    box-shadow: #bbbbbb7a 0px 5px 7px;
+}
+input { 
+    border: none; 
+    box-shadow: #bbbbbb7a 0px 2px 5px;
+}
+
+.main-content {
+    border-radius: 0px 0px 10px 10px;
+    padding: 20px;
+    box-shadow: #bbbbbb7a 0px 17px 23px;
+    background-image: url('/kjdekker/media/corner-piece.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+    background-color: #f8f8ff;
+}
+
+/* mobile version */
+
+@media (max-width: 600px) {
+    .main-content {
+        padding: 20px;
+    }
+
+    
+
+}
+
+/* Kleuren en dergelijke */
+body {
+    background: linear-gradient(#f8f8ff, #f8f8ff, #517a96);
+}
+
+.bg-top {
+    width:100%;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(87, 84, 97);
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.page-header {
+    background-color: #517a96;
+    font-size: 1.5rem;
+    border-radius: 10px 10px 0px 0px;
+    padding: 1px 5px;
+    color: #f8f8ff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Fonts */
+.title h1 {
+    font-family: 'Caveat', cursive;
+    margin-bottom: 0;
+}
+
+.title p {
+    font-family: 'Caveat', cursive;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer altijd aan de bodem */
+.footer {
+    margin-top:100px;
+    color: white;
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    overflow: hidden;
+    background-color: #355062;
+}
+
+.footer a {
+    color: light-gray;
+}
+
+.footer, .page-wrap:after {
+	height:25px;
+}
+
+/* Bootstrap overrides */
+@media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
+}
+
+/* landing page visuele kunstwerkje canvas */
+
+#landingGraphicsSVG {
+    transition: all 0.2s;
+    padding-top: 192px;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: green;  ONLY USED FOR SIZING*/
+}
+
+.alt {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+/* Animaties */
+.content-holder {
+    position: relative;
+    top:-50px;
+    animation: hide-nav;
+    animation-delay:0s;
+    animation-duration: 3s;
+    transition: top 0.5s ease-in-out;
+}
+
+@keyframes hide-nav {
+    0% { top:0; } 50% { top:0; } 100% { top:-50px; }
+}
+
+#navigation:hover + .content-holder {
+    top: 0px;
+}
+
+
+/* Bootstrap re-writes */
+.btn-outline-dark {
+    color: #575461;
+    background-color: transparent;
+    background-image: none;
+    border-color: #575461;
+}
+
+.btn:hover {
+    background-color: #575461;
+}
