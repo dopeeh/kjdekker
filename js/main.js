@@ -9,3 +9,23 @@ function tldr(id) {
         $('.tldr-button').html('TL:DR');
     }
 }
+
+// Jquery animaties
+$(document).ready(function() {
+
+    //de tab en de content-holder animaties
+    $('#navigation')
+        .on("mouseover", function() {
+            $('.small-tab').addClass("small-tab-alt");
+            $('.content-holder').addClass("content-holder-alt");
+    })
+        .on("mouseout", function(){
+            $('.small-tab').removeClass("small-tab-alt");
+            $('.content-holder').removeClass("content-holder-alt");
+    });
+    $('.small-tab')
+        .on("click", function() {
+            $('.small-tab').addClass("small-tab-alt");
+            $('.content-holder').addClass("content-holder-alt");
+    })
+});

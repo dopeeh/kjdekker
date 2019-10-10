@@ -1,5 +1,11 @@
+<div class="small-tab">
+        <hr>
+        <hr>
+</div>
+
 <!-- Content Contact -->
 <div class='content-holder'>
+
     <div class="container page-header">
         Programmeren
     </div>
@@ -14,16 +20,15 @@
 
             <p>Bij een project werk ik graag naar een doel en zie ik problemen als uitdagingen die mij van dat doel weerhouden. Niets is onmogelijk en met genoeg geduld valt alles op te lossen. 
             Dit sluit perfect aan bij de manier waarop de logica in elkaar steekt binnen de verschillende programmeertalen. Omdat mijn denkwijze aansluit bij de manier waarop de problemen opgelost moeten worden 
-            heb ik ondervonden dat ik flexibel tussen programmeertalen kan switchen. Dit heeft natuurlijk als nadeel dat ik mij niet heb kunnen specialiseren.</p>
+            heb ik ondervonden dat ik flexibel tussen programmeertalen kan switchen. Dit heeft natuurlijk als nadeel dat ik mij niet heb kunnen specialiseren. Maar ik ben het hierbij eens met mijn docent Bard Barnard:</p>
 
             <blockquote class="blockquote text-center">
-            Maar ik ben er van overtuigd dat het voor mij als relatief beginnend programmeur vooral nuttig is problemen op te lossen op een abstracter niveau en om dan pas de 
-            techniek in te duiken.
-            <footer class="blockquote-footer">Koen Dekker</footer>
+            Programmeren appelleert meer aan een bepaalde manier van denken dan aan kennis van specifieke talen of tools.
+            <footer class="blockquote-footer">Bard Barnard, Hanzehogeschool Groningen</footer>
             </blockquote>
         </div>
         <div class='tldr-message'>
-            <p>Programmeren is een passie van mij, ik kan hier mijn creativiteit en passie voor puzzelen in kwijt.</p>
+            <span class='mb-3 d-inline-block'>Programmeren is een passie van mij, ik kan hier mijn creativiteit en honger voor puzzelen in kwijt.</span>
         </div>
         <button class='btn btn-outline-dark tldr-button' onClick="tldr('programmingParagraph')">
             Meer lezen...

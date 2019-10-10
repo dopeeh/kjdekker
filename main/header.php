@@ -19,5 +19,8 @@
         <div class='nav-item'>
             <a class="nav-link" href="?p=film">Film</a>
         </div>
+        <div class='nav-item'>
+            <a class="nav-link" href="https://colourfra.me">Colourframe</a>
+        </div>
     </div>
 </div>

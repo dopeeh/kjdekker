@@ -58,7 +58,7 @@ function recalculateDimensions() {
     fillSvgCanvas(svgCanvas);
 
     loop = mainLoop(false);
-    timer = setTimeout(function() { mainLoop(true) }, 5000);
+    timer = setTimeout(function() { mainLoop(true) }, 1000);
 }
 
 //Bouncing animation
@@ -176,7 +176,6 @@ function mainLoop(allowLoop) {
         //iterate counter
         counter++;
 
-        console.log("Dit is de waarde van de timer: " + ((95736000 / (w*h)) + 10))
         //Restart loop with interval relative to width and height
         timer = setTimeout(function() { loop = mainLoop(true) }, ((55736000 / (w*h)) + 10));
     } else {

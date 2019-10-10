@@ -12,8 +12,8 @@
 	?>
 </head>
 <body>
-    <div id='navigation' class='bg-top pt-5'>
-        <div class='container'><!-- Main container -->
+    <div class='bg-top pt-5'>
+        <div id='navigation' class='container'><!-- Main container -->
             <!-- Header -->
             <?php 
                 include 'main/header.php';

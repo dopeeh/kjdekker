@@ -87,17 +87,21 @@ a:hover {
     display: none;
 }
 
+.main-content p {
+    margin-bottom: 3rem;
+}
+
 /* Footer altijd aan de bodem */
 .footer {
     margin-top:100px;
-    color: white;
+    color: #212530;
 	position: fixed;
     bottom: 0;
     width: 100%;
     height: 25px;
     line-height: 25px;
     overflow: hidden;
-    background-color: #355062;
+    background-color: #f8f8ff;
 }
 
 .footer a {
@@ -146,14 +150,54 @@ a:hover {
     transition: top 0.5s ease-in-out;
 }
 
+.small-tab {
+    top: -50px;
+    transition: 0.5s;
+    transition-timing-function: ease-in-out;
+    padding-top: 2px;
+    height: 20px;
+    width: 55px;
+    margin: 0 auto -12px auto;
+    position: relative;
+    background-color: lightgrey;
+    z-index: -1;
+    border-radius: 10px;
+    animation: show-tab;
+    animation-duration: 3s;
+}
+
+.small-tab hr {
+    margin: 0px auto 2px auto;
+    width: 50%;
+    border: 0;
+    border-top: 1px solid rgb(105, 105, 105);
+}
+
 @keyframes hide-nav {
     0% { top:0; } 50% { top:0; } 100% { top:-50px; }
 }
 
-#navigation:hover + .content-holder {
+@keyframes show-tab {
+    0% { 
+        margin: 0 auto -22px auto;
+        top:12px;
+    } 50% {
+        margin: 0 auto -22px auto;
+        top:12px;
+    } 100% {
+        margin: 0 auto -12px auto;
+        top:-50px;
+    }
+}
+
+.content-holder-alt {
     top: 0px;
 }
 
+.small-tab-alt { /* Jquery animation in main.js */
+    margin: 0 auto -22px auto;
+    top:12px;
+}
 
 /* Bootstrap re-writes */
 .btn-outline-dark {
@@ -163,6 +207,7 @@ a:hover {
     border-color: #575461;
 }
 
-.btn:hover {
-    background-color: #575461;
+.btn-light:hover {
+    background-color: #517a96;
+    color:white;
 }

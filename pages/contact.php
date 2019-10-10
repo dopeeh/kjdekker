@@ -42,6 +42,11 @@
 
 ?>
 
+<div class="small-tab">
+        <hr>
+        <hr>
+</div>
+
 <!-- Content Contact -->
 <div class='content-holder'>
     <div class="container page-header">
