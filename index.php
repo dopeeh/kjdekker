@@ -27,6 +27,9 @@
     <!-- Content Homepage -->
     <?php 
         switch($page) {
+            case 'personalia':
+                include 'pages/personalia.php';
+                break;
             case 'contact':
                 include 'pages/contact.php';
                 break;
