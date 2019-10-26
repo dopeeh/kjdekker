@@ -11,6 +11,9 @@
             <a class="nav-link" href="index.php">Home</a>
         </div>
         <div class='nav-item'>
+            <a class="nav-link" href="?p=personalia">Personalia</a>
+        </div>
+        <div class='nav-item'>
             <a class="nav-link" href="?p=programmeren">Programmeren</a>
         </div>
         <div class='nav-item'>

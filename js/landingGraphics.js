@@ -9,7 +9,7 @@ var w = divCanvas.innerWidth();
 var h = divCanvas.innerHeight();
 var svgCanvas = SVG('landingGraphicsSVG').size(w, h);
 var cubeDimension = 51; // Statisch omdat resizen dan werkt
-var opacityFactor = 0.1;
+var opacityFactor = 0.15;
 var opacityMultiplier = h * opacityFactor;
 var matrix = [];
 var timer;
