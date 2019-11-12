@@ -1,3 +1,4 @@
+// Functie voor het verbergen van een stuk tekst.
 function tldr(id) {
     if(!$('#' + id).hasClass('hidden')) {
         $('#' + id).addClass('hidden');
