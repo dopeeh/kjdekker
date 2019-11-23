@@ -15,6 +15,7 @@ var matrix = [];
 var timer;
 var loop;
 var counter = 0;
+var growFactor = 0.3;
 //var pattern = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]]
 var pattern = [[-1, 0], [1, 0]]
 
@@ -169,7 +170,7 @@ function mainLoop(allowLoop) {
         //console.log("Animating cube" + randomRow + ", " + randomColumn);
 
         if (document.hasFocus()) {
-            bounceAnimation(randomRow, randomColumn, 0.3, 2.5);
+            bounceAnimation(randomRow, randomColumn, growFactor, 2.5);
             //recursivePatternAnimation(randomRow, randomColumn, pattern)
         }
 

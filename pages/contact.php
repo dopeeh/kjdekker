@@ -76,7 +76,7 @@
                 <span class='d-block mt-2'>E-mail:</span>
                 <input type='text' name='emailSender'>
                 <span class='d-block mt-2'>Bericht: <i style='color:lightgrey;'>(Max 400 characters)</i> </span>
-                <textarea name="Text1" cols="40" rows="5" maxlength="400" name="msg"></textarea>
+                <textarea cols="40" rows="5" maxlength="400" name="msg"></textarea>
                 <input class="d-block btn btn-light" type='submit' value='Verstuur' name='submitted'>
             </form>
             <?php 
