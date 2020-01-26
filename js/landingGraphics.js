@@ -8,7 +8,7 @@ var divCanvas = $("#landingGraphicsSVG");
 var w = divCanvas.innerWidth();
 var h = divCanvas.innerHeight();
 var svgCanvas = SVG('landingGraphicsSVG').size(w, h);
-var cubeDimension = 120; // Statisch omdat resizen dan werkt
+var cubeDimension = 130; // Statisch omdat resizen dan werkt
 var opacityFactor = 0.15;
 var opacityMultiplier = h * opacityFactor;
 var matrix = [];
@@ -112,7 +112,7 @@ function fillSvgCanvas(svg) {
     var opacity = 0.02;
     matrix = [];
     var matrixRow = [];
-
+    
     while(!screenIsFull) {
         var rect = svg.rect(cubeDimension, cubeDimension).attr({ 
             fill: getRandomColor(colors), 
@@ -120,8 +120,8 @@ function fillSvgCanvas(svg) {
             y: y,
             opacity: opacity,
             class: 'rectangle',
-            rx: 0,
-            ry: 0
+            rx: cubeDimension / 8,
+            ry: cubeDimension / 8
         });
 
         // x positie voor elk blok en toevoegen aan de row in de matrix.
@@ -204,7 +204,7 @@ function mainLoop(allowLoop) {
         }
 
         //Restart loop with interval relative to width and height
-        timer = setTimeout(function() { loop = mainLoop(true) }, /*((55736000 / (w*h)) + 10)*/ 10000);
+        timer = setTimeout(function() { loop = mainLoop(true) }, /*((55736000 / (w*h)) + 10)*/ 7000);
     } else {
         clearTimeout(timer);
     }

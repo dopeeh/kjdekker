@@ -1,5 +1,5 @@
 <?php
 
-$array = []
+echo "<h2> TEST SUCCESS</h2>";
 
 ?>
