@@ -14,7 +14,7 @@ var opacityMultiplier = h * opacityFactor;
 var matrix = [];
 var timer;
 var loop;
-var growFactor = 0.9;
+var growFactor = 0.8;
 //var pattern = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]]
 var pattern = [[-1, 0], [1, 0]]
 
@@ -88,8 +88,8 @@ function bounceAnimation(row, column, startDelay, growFactor, duration) {
                                     x: startPos[0] - (((cubeDimension * growFactor) - cubeDimension) / 2),
                                     y: startPos[1] - (((cubeDimension * growFactor) - cubeDimension) / 2),
                                     fill: getRandomColor(coolors),
-                                    //rx: '0', //cubeDimension / 2,
-                                    //ry: '0' //cubeDimension / 2
+                                    rx: cubeDimension / 14,
+                                    ry: cubeDimension / 14
                                 });
         rectangle.animate(durationEnd, '<').attr({
                                     width: cubeDimension,
@@ -97,8 +97,8 @@ function bounceAnimation(row, column, startDelay, growFactor, duration) {
                                     x: startPos[0],
                                     y: startPos[1],
                                     fill: getRandomColor(colors),
-                                    //rx: cubeDimension / 2,
-                                    //ry: cubeDimension / 2
+                                    rx: cubeDimension / 8,
+                                    ry: cubeDimension / 8
         });
     //} else {
         //console.log("animation failed because already animating");
@@ -172,11 +172,11 @@ function recursivePatternAnimation(row, column, pattern, delay) {
     column += pattern[1];
 
     if (typeof matrix[row] !== 'undefined' ) {
-        if (typeof matrix[row][column] !== 'undefined' && row >= 0 && row <= matrix.length && column >=0  && column <= matrix[row].length /*&& delay < 20*/) {
+        if (typeof matrix[row][column] !== 'undefined' && row >= 0 && row <= matrix.length && column >=0  && column <= matrix[row].length) {
             bounceAnimation(row, column, delay * 100, growFactor, 5);
-            delay++;
+            delay += 2;
             if (pattern[0] != 0 && pattern[1] != 0) {
-                recursivePatternAnimation(row, column, pattern, delay);
+                recursivePatternAnimation(row, column, pattern, delay + 1);
                 recursivePatternAnimation(row, column, [pattern[0], 0], delay);
                 recursivePatternAnimation(row, column, [0, pattern[1]], delay);
             } else {
@@ -204,7 +204,7 @@ function mainLoop(allowLoop) {
         }
 
         //Restart loop with interval relative to width and height
-        timer = setTimeout(function() { loop = mainLoop(true) }, /*((55736000 / (w*h)) + 10)*/ 7000);
+        timer = setTimeout(function() { loop = mainLoop(true) }, /*((55736000 / (w*h)) + 10)*/ 10000);
     } else {
         clearTimeout(timer);
     }
