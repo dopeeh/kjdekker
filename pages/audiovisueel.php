@@ -6,7 +6,7 @@
 <!-- Content Contact -->
 <div class='content-holder'>
     <div class="container page-header">
-        Film
+        Audiovisueel portfolio
     </div>
 
     <div class='container main-content'>

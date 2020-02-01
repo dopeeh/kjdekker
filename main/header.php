@@ -5,7 +5,7 @@
 </div>
 
 <!-- Navbar -->
-<div class='container w-75'>
+<div class='container'>
     <div class='navbar text-center'>
         <div class='nav-item'>
             <a class="nav-link" href="index.php">Home</a>
@@ -20,7 +20,7 @@
             <a class="nav-link" href="?p=fotografie">Fotografie</a>
         </div>
         <div class='nav-item'>
-            <a class="nav-link" href="?p=film">Film</a>
+            <a class="nav-link" href="?p=audiovisueel">Audiovisueel</a>
         </div>
         <div class='nav-item'>
             <a class="nav-link" href="https://colourfra.me">Colourframe</a>

@@ -39,8 +39,8 @@
             case 'fotografie':
                 include 'pages/fotografie.php';
                 break;
-            case 'film':
-                include 'pages/film.php';
+            case 'audiovisueel':
+                include 'pages/audiovisueel.php';
                 break;
             default:
                 echo "";

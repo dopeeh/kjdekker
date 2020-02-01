@@ -9,7 +9,7 @@ var w = divCanvas.innerWidth();
 var h = divCanvas.innerHeight();
 var svgCanvas = SVG('landingGraphicsSVG').size(w, h);
 var cubeDimension = 130; // Statisch omdat resizen dan werkt
-var opacityFactor = 0.15;
+var opacityFactor = 0.05;
 var opacityMultiplier = h * opacityFactor;
 var matrix = [];
 var timer;
@@ -66,40 +66,40 @@ function bounceAnimation(row, column, startDelay, growFactor, duration) {
     if(typeof growFactor == 'undefined')
         var growFactor = 0.3;
 
-    oldRect = matrix[row][column];
+    rectangle = matrix[row][column];
     
     //console.log("animating cube: " + row + ", " + column)
     
-    //if(oldRect.attr('width') === cubeDimension)  {
-        var rectangle = svgCanvas.rect(cubeDimension, cubeDimension);
-        var durationStart = (duration * 1000) * 0.2;
-        var durationEnd = (duration * 1000) * 0.8;
-        for (let attribute in oldRect.attr()) {
-            rectangle.attr(attribute, oldRect.attr()[attribute]);
-        }
-        oldRect.remove();
-        matrix[row][column] = rectangle;
-        var curWidth = rectangle.attr('width');
-        var curPos = [rectangle.attr('x'), rectangle.attr('y')];
-        var startPos = (curWidth < cubeDimension)? [ curPos[0] - ((cubeDimension - curWidth) /2) , curPos[1] - ((cubeDimension - curWidth) / 2 ) ] : [ curPos[0] - ((cubeDimension - curWidth) / 2) , curPos[1] - ((cubeDimension - curWidth) / 2 ) ] 
-        rectangle.animate(durationStart, '>', startDelay).attr({
-                                    width: (cubeDimension * growFactor),
-                                    height: (cubeDimension * growFactor),
-                                    x: startPos[0] - (((cubeDimension * growFactor) - cubeDimension) / 2),
-                                    y: startPos[1] - (((cubeDimension * growFactor) - cubeDimension) / 2),
-                                    fill: getRandomColor(coolors),
-                                    rx: cubeDimension / 14,
-                                    ry: cubeDimension / 14
-                                });
-        rectangle.animate(durationEnd, '<').attr({
-                                    width: cubeDimension,
-                                    height: cubeDimension,
-                                    x: startPos[0],
-                                    y: startPos[1],
-                                    fill: getRandomColor(colors),
-                                    rx: cubeDimension / 8,
-                                    ry: cubeDimension / 8
-        });
+    //if(rectangle.attr('width') === cubeDimension)  {
+    //var rectangle = svgCanvas.rect(cubeDimension, cubeDimension);
+    var durationStart = (duration * 1000) * 0.2;
+    var durationEnd = (duration * 1000) * 0.8;
+    // for (let attribute in rectangle.attr()) {
+    //     rectangle.attr(attribute, rectangle.attr()[attribute]);
+    // }
+    //rectangle.remove();
+    //matrix[row][column] = rectangle;
+    var curWidth = rectangle.attr('width');
+    var curPos = [rectangle.attr('x'), rectangle.attr('y')];
+    var startPos = (curWidth < cubeDimension)? [ curPos[0] - ((cubeDimension - curWidth) /2) , curPos[1] - ((cubeDimension - curWidth) / 2 ) ] : [ curPos[0] - ((cubeDimension - curWidth) / 2) , curPos[1] - ((cubeDimension - curWidth) / 2 ) ] 
+    rectangle.animate(durationStart, '>', startDelay).attr({
+                                width: (cubeDimension * growFactor),
+                                height: (cubeDimension * growFactor),
+                                x: startPos[0] - (((cubeDimension * growFactor) - cubeDimension) / 2),
+                                y: startPos[1] - (((cubeDimension * growFactor) - cubeDimension) / 2),
+                                fill: getRandomColor(coolors),
+                                rx: cubeDimension / 14,
+                                ry: cubeDimension / 14
+                            });
+    rectangle.animate(durationEnd, '<').attr({
+                                width: cubeDimension,
+                                height: cubeDimension,
+                                x: startPos[0],
+                                y: startPos[1],
+                                fill: getRandomColor(colors),
+                                rx: cubeDimension / 8,
+                                ry: cubeDimension / 8
+    });
     //} else {
         //console.log("animation failed because already animating");
     //}
@@ -122,6 +122,10 @@ function fillSvgCanvas(svg) {
             class: 'rectangle',
             rx: cubeDimension / 8,
             ry: cubeDimension / 8
+        });
+
+        rect.click(function() {
+            this.fill({ color: '#FFF' });
         });
 
         // x positie voor elk blok en toevoegen aan de row in de matrix.
