@@ -14,9 +14,11 @@ var opacityMultiplier = h * opacityFactor;
 var matrix = [];
 var timer;
 var loop;
-var growFactor = 0.8;
+var growFactor = 2;
+var durationAnimation = 10;
 //var pattern = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]]
 var pattern = [[-1, 0], [1, 0]]
+var animating = false;
 
 // functie die een willekeurige kleur uit de colors array returned.
 function getRandomColor(arrayOfColors){
@@ -66,6 +68,13 @@ function bounceAnimation(row, column, startDelay, growFactor, duration) {
     if(typeof growFactor == 'undefined')
         var growFactor = 0.3;
 
+    if (typeof matrix[row] == 'undefined' ) {
+        if (typeof matrix[row][column] == 'undefined') {
+            return;
+        }
+        return;
+    }
+
     rectangle = matrix[row][column];
     
     //console.log("animating cube: " + row + ", " + column)
@@ -82,16 +91,16 @@ function bounceAnimation(row, column, startDelay, growFactor, duration) {
     var curWidth = rectangle.attr('width');
     var curPos = [rectangle.attr('x'), rectangle.attr('y')];
     var startPos = (curWidth < cubeDimension)? [ curPos[0] - ((cubeDimension - curWidth) /2) , curPos[1] - ((cubeDimension - curWidth) / 2 ) ] : [ curPos[0] - ((cubeDimension - curWidth) / 2) , curPos[1] - ((cubeDimension - curWidth) / 2 ) ] 
-    rectangle.animate(durationStart, '>', startDelay).attr({
+    rectangle.animate(durationStart, '<>', startDelay).attr({
                                 width: (cubeDimension * growFactor),
                                 height: (cubeDimension * growFactor),
                                 x: startPos[0] - (((cubeDimension * growFactor) - cubeDimension) / 2),
                                 y: startPos[1] - (((cubeDimension * growFactor) - cubeDimension) / 2),
                                 fill: getRandomColor(coolors),
-                                rx: cubeDimension / 14,
-                                ry: cubeDimension / 14
+                                rx: cubeDimension / 2,
+                                ry: cubeDimension / 2
                             });
-    rectangle.animate(durationEnd, '<').attr({
+    rectangle.animate(durationEnd, '<>', 1000).attr({
                                 width: cubeDimension,
                                 height: cubeDimension,
                                 x: startPos[0],
@@ -124,10 +133,6 @@ function fillSvgCanvas(svg) {
             ry: cubeDimension / 8
         });
 
-        rect.click(function() {
-            this.fill({ color: '#FFF' });
-        });
-
         // x positie voor elk blok en toevoegen aan de row in de matrix.
         x += cubeDimension;
         matrixRow.push(rect);
@@ -151,11 +156,15 @@ function fillSvgCanvas(svg) {
 }
 
 function recursivePatternAnimationBase(row, column) {
+    animating = true;
     delay = 1;
+
+    var rowRoomUp = row
     //console.log("function called once for: row " + row + " and column " + column )
+
     if (typeof matrix[row] !== 'undefined' ) {
         if (typeof matrix[row][column] !== 'undefined' && row >= 0 && row <= matrix.length && column >=0  && column <= matrix[row].length) {
-            bounceAnimation(row, column, 0, growFactor, 5);
+            bounceAnimation(row, column, 0, growFactor, durationAnimation);
             recursivePatternAnimation(row, column, [-1, 0], delay);
             recursivePatternAnimation(row, column, [1, 0], delay);
             recursivePatternAnimation(row, column, [0, -1], delay);
@@ -169,15 +178,92 @@ function recursivePatternAnimationBase(row, column) {
     } else {
         return //mainLoop(true);
     }
+
+    /*
+
+    [-1,-1][-1, 0][-1, 1]
+    [ 0,-1][ 0, 0][ 0, 1]
+    [ 1,-1][ 1, 0][ 1, 1]
+
+
+    if (typeof matrix[row] !== 'undefined' ) {
+        if (typeof matrix[row][column] !== 'undefined') {
+            var delay = 1;
+
+            var x = row;
+            var xDone = false;
+            var y = column;
+            var yDone = false;
+            var xNeg = row;
+            var xNegDone = false;
+            var yNeg = column;
+            var yNegDone = false;
+
+            bounceAnimation(row, column, 0, growFactor, durationAnimation);
+            while(!xDone && !yDone && !xNegDone && !yNegDone) {
+                xNeg -= 1;
+                yNeg -= 1;
+                x += 1;
+                y += 1;
+                if (typeof matrix[xNeg] !== 'undefined') {
+                    bounceAnimation(xNeg, column, delay, growFactor, durationAnimation);
+
+                    if (typeof matrix[xNeg][yNeg] !== 'undefined') {
+                        bounceAnimation(xNeg, yNeg, delay + 1, growFactor, durationAnimation);
+                    } else {
+                        yNegDone = true;
+                    }
+
+                    if (typeof matrix[xNeg][y] !== 'undefined') {
+                        bounceAnimation(xNeg, y, delay + 1, growFactor, durationAnimation);
+                    }
+                } else {
+                    xNegDone = true;
+                }
+
+                if (typeof matrix[row][yNeg] !== 'undefined') {
+                    bounceAnimation(row, yNeg, delay + 1, growFactor, durationAnimation);
+                }
+
+                if (typeof matrix[row][y] !== 'undefined') {
+                    bounceAnimation(row, y, delay + 1, growFactor, durationAnimation);
+                }
+
+                delay += 2;
+            }
+
+            for(var x = row; x < matrix.length; x++) {
+                delay += 2;
+
+                bounceAnimation(row - (x - row), column, delay * 100, growFactor, durationAnimation);
+
+                bounceAnimation(x, column, delay * 100, growFactor, durationAnimation);
+                for(var y = column; y < matrix[row].length; y++) {
+                    bounceAnimation(row, column - (y- column), delay * 100, growFactor, durationAnimation);
+                    bounceAnimation(row - (x - row), column - (y- column), delay * 100, growFactor, durationAnimation);
+
+                    bounceAnimation(row, y, delay * 100, growFactor, durationAnimation);
+                    bounceAnimation(x, y, delay * 100, growFactor, durationAnimation);
+                }
+            }
+
+        } else {
+            return;
+        }
+    } else {
+        return;
+    }
+    */
 }
 
 function recursivePatternAnimation(row, column, pattern, delay) {
+    animating = true;
     row += pattern[0];
     column += pattern[1];
 
     if (typeof matrix[row] !== 'undefined' ) {
         if (typeof matrix[row][column] !== 'undefined' && row >= 0 && row <= matrix.length && column >=0  && column <= matrix[row].length) {
-            bounceAnimation(row, column, delay * 100, growFactor, 5);
+            bounceAnimation(row, column, delay * 100, growFactor, durationAnimation);
             delay += 2;
             if (pattern[0] != 0 && pattern[1] != 0) {
                 recursivePatternAnimation(row, column, pattern, delay + 1);
@@ -204,11 +290,12 @@ function mainLoop(allowLoop) {
 
         if (document.hasFocus()) {
             //bounceAnimation(randomRow, randomColumn, growFactor, 2.5);
+            console.log("Animating: " + randomRow + " - " + randomColumn);
             recursivePatternAnimationBase(randomRow, randomColumn, pattern)
         }
 
         //Restart loop with interval relative to width and height
-        timer = setTimeout(function() { loop = mainLoop(true) }, /*((55736000 / (w*h)) + 10)*/ 10000);
+        timer = setTimeout(function() { loop = mainLoop(true) }, /*((55736000 / (w*h)) + 10)*/ 15000);
     } else {
         clearTimeout(timer);
     }

@@ -11,11 +11,16 @@
 
     <div class='container main-content'>
         <p>
-        Film is naar mijn mening het meest complete medium om mee te communiceren. Het is de perfecte combinatie tussen audio en foto, wat resulteert in bijna levend stukje verhaal waar iedereen zich mee kan verbinden. Ik heb met film vooral gewerkt aan persoonlijke projecten maar sta open voor projecten die mijn interesse wekken.
+        Animatie en film zijn dingen waar ik graag mee bezig ben. Ook maak ik graag muziek. 
+        <br><br>
+        Voor commisie werk klik <a href='https://www.fiverr.com/koendekker/motion-your-logo-graphic' target='_blank'>hier</a> of neem contact op via <a href='?p=contact'>hier</a>
         </p>
 
         <p>
-        <a href='https://youtube.com/dopeehedit'><i class="fab fa-youtube h4"></i> Mijn persoonlijke youtube kanaal.</a>
+            <a href='https://youtube.com/dopeehedit' target="_blank"><i class="fab fa-youtube h4"></i> Mijn youtube kanaal</a>
+        </p>
+        <p>
+            <a href='https://soundcloud.com/dopeehmusic' target="_blank"><i class="fab fa-soundcloud h4"></i> Mijn soundcloud</a>
         </p>
         <!-- Page Content -->
 

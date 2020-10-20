@@ -16,5 +16,6 @@
 <script src="https://kit.fontawesome.com/0eb4fb61e7.js" crossorigin="anonymous"></script>
 <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
 <script src="js/svg.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <title>Koen Jesse Dekker</title>

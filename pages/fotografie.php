@@ -17,16 +17,9 @@
 
     <div class='container main-content'>
 
-        <div id='photographyParagraph' class='hidden'>
-            <p>Vanaf kinds af aan heb ik mij altijd bezig gehouden met het vastleggen van herinneringen op foto en film. Dit is naar mate ik ouder werd een ware passie geworden 
-            waar ik veel tijd in heb gestoken. Het mooiste vind ik  de natuur fotograferen maar het idee van een moment, plek of persoon vastleggen op een moment van betekenis geeft mij veel voldoening.</p>
-        </div>
         <div class='tldr-message'>
-            <span class='mb-3 d-inline-block'>De tijd stil zetten op het mooiste moment is mijn hobby..</span>
+            <span class='mb-3 d-inline-block'>Fotografie vind ik erg leuk om te doen. Hieronder een paar voorbeelden van wat ik graag fotografeer. </span>
         </div>
-        <button class='btn btn-outline-dark tldr-button mb-5' onClick="tldr('photographyParagraph')">
-            Meer lezen...
-        </button>
 
         <section id='photos'>
         
