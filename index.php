@@ -55,6 +55,7 @@
     ?>
 
 <!-- Javascript here -->
+<script src="github-widget/github-widget.min.js"></script>
 <script src='js/landingGraphics.js'></script>
 <script src='js/main.js'></script>
 </body>

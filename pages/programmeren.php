@@ -20,7 +20,7 @@
 
             <p>Bij een project werk ik graag naar een doel en zie ik problemen als uitdagingen die mij van dat doel weerhouden. Niets is onmogelijk en met genoeg geduld valt alles op te lossen. 
             Omdat mijn denkwijze aansluit bij de manier waarop de problemen opgelost moeten worden heb ik ondervonden dat ik flexibel tussen programmeertalen kan switchen. 
-            Dit heeft natuurlijk als nadeel dat ik mij niet heb kunnen specialiseren. Maar ik ben het hierbij eens met mijn docent Bard Barnard:</p>
+            Dit heeft als nadeel dat ik mij niet heb kunnen specialiseren, maar ik ben het hierbij eens met mijn docent Bard Barnard:</p>
 
             <blockquote class="blockquote text-center">
             Programmeren appelleert meer aan een bepaalde manier van denken dan aan kennis van specifieke talen of tools.
@@ -35,6 +35,7 @@
         </button>
 
         <p class='mt-5'>Portfolio:</p>
+        <div class="github-widget" data-user="dopeeh"></div>
 
     </div>
 </div>

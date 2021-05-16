@@ -2,14 +2,15 @@
 //var coolors = ['#FF77A9', '#FAF7FA', '#D0E9EB', '#008996', '#046787'];
 var colors = ['#517a96', '#43667d', '#6292b3', '#2e4a5d'];
 var coolors = ['#517A96', '#A5D8FF', '#C6EBF2', '#FFE5F3', '#FFC4C7'];
-//var coolors = ['#7FC1E0', '#7FC1E0', '#7FC1E0', '#19647E', '#19647E', '#19647E', '#16324F', '#F6A746', '#F8F8FF', '#F8F8FF'];
+//var coolors = ['#517a96', '#43667d', '#6292b3', '#2e4a5d'];
+//var colors = ['#7FC1E0', '#7FC1E0', '#7FC1E0', '#19647E', '#19647E', '#19647E', '#16324F', '#F6A746', '#F8F8FF', '#F8F8FF'];
 var screenIsFull = false;
 var divCanvas = $("#landingGraphicsSVG");
 var w = divCanvas.innerWidth();
 var h = divCanvas.innerHeight();
 var svgCanvas = SVG('landingGraphicsSVG').size(w, h);
-var cubeDimension = 130; // Statisch omdat resizen dan werkt
-var opacityFactor = 0.05;
+var cubeDimension = 190; // Statisch omdat resizen dan werkt
+var opacityFactor = 0.005;
 var opacityMultiplier = h * opacityFactor;
 var matrix = [];
 var timer;
@@ -95,7 +96,7 @@ function bounceAnimation(row, column, startDelay, growFactor, duration) {
                                 width: (cubeDimension * growFactor),
                                 height: (cubeDimension * growFactor),
                                 x: startPos[0] - (((cubeDimension * growFactor) - cubeDimension) / 2),
-                                y: startPos[1] - (((cubeDimension * growFactor) - cubeDimension) / 2),
+                                y: startPos[1] + (((cubeDimension * growFactor) - cubeDimension) / 2),
                                 fill: getRandomColor(coolors),
                                 rx: cubeDimension / 2,
                                 ry: cubeDimension / 2
@@ -106,8 +107,8 @@ function bounceAnimation(row, column, startDelay, growFactor, duration) {
                                 x: startPos[0],
                                 y: startPos[1],
                                 fill: getRandomColor(colors),
-                                rx: cubeDimension / 8,
-                                ry: cubeDimension / 8
+                                rx: 0,//cubeDimension / 8,
+                                ry: 0//cubeDimension / 8
     });
     //} else {
         //console.log("animation failed because already animating");
@@ -118,7 +119,7 @@ function bounceAnimation(row, column, startDelay, growFactor, duration) {
 function fillSvgCanvas(svg) {
     var x = 0;
     var y = 0;
-    var opacity = 0.02;
+    var opacity = 0.012;
     matrix = [];
     var matrixRow = [];
     
@@ -129,9 +130,13 @@ function fillSvgCanvas(svg) {
             y: y,
             opacity: opacity,
             class: 'rectangle',
-            rx: cubeDimension / 8,
-            ry: cubeDimension / 8
+            rx: 0,//cubeDimension / 8,
+            ry: 0//cubeDimension / 8
         });
+
+        rect.click(function() {
+            this.animate(500, '<>').attr({fill: '#000'});
+        })
 
         // x positie voor elk blok en toevoegen aan de row in de matrix.
         x += cubeDimension;

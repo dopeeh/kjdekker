@@ -23,7 +23,7 @@
         <div>
             <h5 class="mt-3">Heb ik uw interesse gewekt?</h5>
             <p>
-                Stuur uw bericht naar <a href='mailto:kdekker@colourfra.me'>mail@kjdekker.com</a> </p><p>of via <br><a href='wa.me/31651907179' target='_blank'><button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>Whatsapp</button></a>
+                Stuur uw bericht naar <a href='mailto:kdekker@colourfra.me'>mail@kjdekker.com</a> </p><p>of via <br><a href='https://wa.me/31651907179' class="d-block mt-2" target='_blank'><button type="button" class="btn btn-success"><i class="fab fa-whatsapp"></i>Whatsapp</button></a>
             </p>
         </div>
 
